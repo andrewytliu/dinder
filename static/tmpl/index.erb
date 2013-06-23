@@ -1,0 +1,8 @@
+<div id="placeholder">
+    <form <%= D.formFor("create_post") %>>
+        <%= D.csrfTag() %>
+        <textarea id="msg"></textarea>
+        <input type="submit" value="Send"/>
+    </form>
+    <%= D.render("show_posts") %>
+</div>

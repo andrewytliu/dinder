@@ -1,0 +1,5 @@
+<div class="comments" <%= D.bindPath("show_comments", [params[0]]) %>>
+    <% _.each(_comments, function(comment) { %>
+        <%= D.render("show_comment", [params[0], comment.id], {_comment: comment, _cid: params[0]}) %>
+    <% }); %>
+</div>

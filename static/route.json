@@ -1,0 +1,27 @@
+{
+    "create_post": {
+        "path": "/posts",
+        "method": "post"
+    },
+    "create_comment": {
+        "path": "/comments/:id",
+        "method": "post"
+    },
+    "show_posts": {
+        "path": "/posts",
+        "method": "get"
+    },
+    "show_post": {
+        "path": "/posts/:id",
+        "method": "get"
+    },
+    "show_comments": {
+        "path": "/comments/:id",
+        "method": "get"
+    },
+    "show_comment": {
+        "path": "/comments/:id/:cid",
+        "method": "get"
+    }
+}
+

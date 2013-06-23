@@ -1,0 +1,3 @@
+<% D.domFor("show_comments", [params[0]]).append(
+    D.render("show_comment", [params[0], _comment.id], {_comment: _comment, _cid: params[0]})
+); %>

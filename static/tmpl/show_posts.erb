@@ -1,0 +1,6 @@
+<div id="posts" <%= D.bindPath("show_posts") %>>
+    <% _.each(_posts, function(post) { %>
+        <%= D.render("show_post", post.id, {_post: post}) %>
+    <% }); %>
+</div>
+

@@ -1,0 +1,11 @@
+<div class="post" <%= D.bindPath("show_post", [_post.id]) %>>
+    <%= _post.msg %>
+    <div class="discuss">
+        <form <%= D.formFor("create_comment", [_post.id]) %>>
+            <%= D.csrfTag() %>
+            <input type="text" id="comment" />
+            <input type="submit" value="Send!" />
+        </form>
+        <%= D.render("show_comments", [_post.id], {_comments: _post.comments}) %>
+    </div>
+</div>

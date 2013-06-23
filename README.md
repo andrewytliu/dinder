@@ -4,7 +4,7 @@ Binding DOMs to remote JSON api.
 
 ## Preparation
 1. Prepare /static/route.json
-```json
+```
 {
     "create_post": {
         "path": "/posts",
@@ -24,12 +24,12 @@ Binding DOMs to remote JSON api.
 ## Utilities
 * D.genPath(PATH, PARAMS)
   generating path by params
-```javascript
+```
 D.genPath("show_comment", [1,2]) // "/comments/1/2"
 ```
 * D.bindPath(PATH, PARAMS)
   bind a DOM to a PATH with PARAMS
-```erb
+```
 <div class="comment" <%= D.bindPath("show_comment", [comment.post_id, comment.id]) %>
 ```
 * D.formFor(PATH, PARAMS)

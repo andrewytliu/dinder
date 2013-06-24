@@ -2,6 +2,15 @@
 Rhythm with binder.
 Binding DOMs to remote JSON api.
 
+## Design
+* Simple server, provides JSON api.
+* Bind DOM to JSON api, so the response from server will be automatically rendered and place to the right position.
+* For MVC model: Model and Controller are on the server side, leave View in the client side.
+
+## Cons
+* Simple server
+* No need to design a client-side controller for handling the responses
+
 ## Preparation
 1. Prepare /static/route.json
 
@@ -21,7 +30,9 @@ Binding DOMs to remote JSON api.
 2. Prepare template for each entry, put it under /static/tmpl/    
    Templates are ERB style.
 3. The first page would be /static/tmpl/index.erb
-4. That's it!
+4. Design template for each entry (ex: create_post.erb)    
+   Don't forget to bind DOM to remote API (by D.bindPath)
+5. That's it!
 
 ## Utilities
 * D.genPath(PATH, PARAMS)    
@@ -35,7 +46,7 @@ D.genPath("show_comment", [1,2]) // "/comments/1/2"
   bind a DOM to a PATH with PARAMS
 
 ```erb
-<div class="comment" <%= D.bindPath("show_comment", [comment.post_id, comment.id]) %>
+<div class="comment" <%= D.bindPath("show_comment", [comment.post_id, comment.id]) %>>
 ```
 
 * D.formFor(PATH, PARAMS)    
